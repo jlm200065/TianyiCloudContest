@@ -1,0 +1,3 @@
+com\panda\feign\clients\UserClient.class
+com\panda\feign\clients\MovieClient.class
+com\panda\feign\clients\CinemasClient.class

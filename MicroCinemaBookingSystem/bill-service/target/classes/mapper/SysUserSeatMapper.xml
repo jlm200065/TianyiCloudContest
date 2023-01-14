@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.panda.system.mapper.SysUserSeatMapper">
+    <resultMap id="UserSeatMap" type="SysUserSeat">
+        <id property="Id" column="id"></id>
+        <result property="seatRow" column="seat_row"></result>
+        <result property="seatCol" column="seat_col"></result>
+        <result property="userId"  column="user_id"></result>
+        <result property="sessionId"  column="session_id"></result>
+    </resultMap>
+
+
+
+
+    <update id="addUserSeat" parameterType="com.panda.system.domin.SysUserSeat">
+        insert into sys_user_seat
+            (seat_row, seat_col, session_id, user_id)
+        values
+            (#{seatRow}, #{seatCol}, #{sessionId}, #{userId})
+    </update>
+
+    <select id="selectUserId" resultMap="UserSeatMap"
+            parameterType="com.panda.system.domin.SysUserSeat">
+        select * from sys_user_seat
+        where seat_row = #{seatRow} and seat_col = #{seatCol} and session_id = #{sessionId}
+    </select>
+</mapper>

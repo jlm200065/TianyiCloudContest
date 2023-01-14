@@ -1,0 +1,10 @@
+com\panda\MovieApplication.class
+com\panda\system\service\SysMovieCategoryService.class
+com\panda\web\controller\BaseController.class
+com\panda\system\service\SysMovieService.class
+com\panda\web\controller\system\SysMovieController.class
+com\panda\system\service\impl\SysMovieCategoryServiceImpl.class
+com\panda\web\controller\system\SysMovieCategoryController.class
+com\panda\system\mapper\SysMovieCategoryMapper.class
+com\panda\system\mapper\SysMovieMapper.class
+com\panda\system\service\impl\SysMovieServiceImpl.class

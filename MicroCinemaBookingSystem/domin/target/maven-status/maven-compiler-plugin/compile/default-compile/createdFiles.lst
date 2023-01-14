@@ -1,0 +1,17 @@
+com\panda\system\domin\SysCinema.class
+com\panda\system\domin\SysUser.class
+com\panda\system\domin\LoginUser.class
+com\panda\system\domin\SysBill.class
+com\panda\system\domin\SysMovieToCategory.class
+com\panda\system\domin\vo\SysSessionVo.class
+com\panda\system\domin\SysSession.class
+com\panda\system\domin\SysRole.class
+com\panda\system\domin\SysMovieCategory.class
+com\panda\system\domin\SysMovie.class
+com\panda\system\domin\vo\SysBillVo.class
+com\panda\system\domin\SysMessage.class
+com\panda\system\domin\vo\SysUserVo.class
+com\panda\system\domin\SysUserSeat.class
+com\panda\system\domin\vo\SysMovieVo.class
+com\panda\system\domin\SysResource.class
+com\panda\system\domin\SysHall.class

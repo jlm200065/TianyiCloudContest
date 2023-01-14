@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.panda.system.mapper.SysMessageMapper">
+<!--    <resultMap id="SysMessageMap" type="SysMessage">-->
+<!--        <id property="messageId" column="message_id"></id>-->
+<!--        <result property="fromId" column="from_id"></result>-->
+<!--        <result property="toId" column="to_id"></result>-->
+<!--        <result property="content" column="content"></result>-->
+<!--        <result property="createTime" column="create_time"></result>-->
+<!--    </resultMap>-->
+    <insert id="addMessage" parameterType="com.panda.system.domin.SysMessage">
+        insert into sys_message
+            (from_id, to_id, content, create_time)
+        values
+            (#{fromId}, #{toId}, #{content},sysdate())
+    </insert>
+
+
+    <update id="updateHaveSeen" parameterType="Long">
+        update sys_message
+            set have_seen = 1
+        where
+            message_id = #{id}
+    </update>
+
+    <select id="selectAllFromAndToMessgae" resultType="com.panda.system.domin.SysMessage" parameterType="Long">
+        select * from sys_message where from_id = #{userId} or to_id = #{userId}
+    </select>
+
+
+
+
+
+</mapper>

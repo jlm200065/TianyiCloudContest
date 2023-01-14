@@ -1,0 +1,83 @@
+# Spring 配置
+spring:
+  application:
+    name: user-service
+  main:
+    #允许存在多个Feign调用相同Service的接口
+    allow-bean-definition-overriding: true
+  # 数据源配置文件
+  profiles:
+    active: druid
+
+  # 开发工具，配置热部署
+  devtools:
+    restart:
+      enabled: true #热部署
+  freemarker:
+    cache: false #页面不开启缓存，修改即生效
+
+  # jackson日期格式配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  # mvc日期格式配置
+  mvc:
+    format:
+      date: yyyy-MM-dd
+      date-time: yyyy-MM-dd HH:mm:ss
+
+  # 文件上传大小限制
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+# Mybatis 配置
+mybatis:
+  type-aliases-package: com.panda.**.domin #指定封装到实体类的包，省去书写全类名
+  mapper-locations: classpath*:mapper/**/*Mapper.xml #mapper配置文件的位置
+  configuration:
+    map-underscore-to-camel-case: true #配置开启驼峰式命名
+
+# logging 日志配置
+logging:
+  level:
+    com.panda: trace
+    org.springframework: warn
+
+# pagehelper 分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8010/eureka
+feign:
+  oauth2:
+    enabled: true
+    load-balanced: true
+
+  client:
+    config:
+      default: # default全局的配置
+        loggerLevel: BASIC # 日志级别，BASIC就是基本的请求和响应信息
+  httpclient:
+    enabled: true # 开启feign对HttpClient的支持
+    max-connections: 200 # 最大的连接数
+    max-connections-per-route: 50 # 每个路径的最大连接数
+
+
+server:
+  port: 8071
+
+
+
